@@ -1,8 +1,42 @@
+//adding the extra days and months 
+function generateDays() {
+  var daysInMonth = dayjs().daysInMonth();
+  for (var i = 1; i <= daysInMonth; i++) {
+    var dayDiv = $("<div>").attr("id", "day" +i).addClass("day");
+    $("#calendar").append(dayDiv);
+    for (var j = 9; j<= 17; j++) {
+      var timeBlock = $("<div>")
+      attr("id", "day" + i + "hour" + j)
+      addClass("row time-block");
+      dayDiv.append(timeBlock);
+
+      var hourDiv = $("<div>")
+      .addClass("col-2 col-md-1 hour text-center py-3")
+      .text(j <=12 ? j + "AM" : j - 12 + "PM");
+      timeBlock.append(hourDiv);
+
+      var textarea = $("<textarea>")
+      addClass("col-8 col-md-10 description")
+      attr("aria-label", "save")
+      .html(<i class="fas fa=save" aria-hidden="true"></i>);
+
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
 $(function () {
 // Displaying current date in header.
-$("#currentDay").text(days().format("MMMM D, YYYY"));
+$("#currentDay").text(dayjs().format("MMMM D, YYYY"));
 // Applying the present/past/future to each block
-var currentHour = days().hour();
+var currentHour = dayjs().hour();
 $(".time-block").each(function() {
 var blockHour = parseInt($(this).attr("id").split("-")[1]);
 
