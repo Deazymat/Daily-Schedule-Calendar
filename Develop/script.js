@@ -1,3 +1,28 @@
+$(function () {
+// Displaying current date in header.
+$("#currentDay").text(days().format("MMMM D, YYYY"));
+// Applying the present/past/future to each block
+var currentHour = days().hour();
+$(".time-block").each(function() {
+var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+
+
+}
+
+
+
+)
+
+
+}
+
+
+
+)
+
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -21,3 +46,4 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
+ 
