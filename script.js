@@ -1,14 +1,15 @@
 //adding the extra days and months 
 function generateDays() {
-  var daysInMonth = dayjs().daysInMonth();
-  for (var i = 1; i <= daysInMonth; i++) {
-    var dayDiv = $("<div>").attr("id", "day" +i).addClass("day");
-    $("#calendar").append(dayDiv);
+  // var daysInMonth = dayjs().daysInMonth();
+  // for (var i = 1; i <= daysInMonth; i++) {
+  //   var dayDiv = $("<div>").attr("id", "day" +i).addClass("day");
+  //   $("#calendar").append(dayDiv);
     for (var j = 9; j<= 17; j++) {
       var timeBlock = $("<div>")
-      attr("id", "day" + i + "hour" + j)
-      addClass("row time-block");
-      dayDiv.append(timeBlock);
+      .attr("id", "hour-" + j)
+      .addClass("row time-block");
+      // dayDiv
+      $("#schedule").append(timeBlock);
 
       var hourDiv = $("<div>")
       .addClass("col-2 col-md-1 hour text-center py-3")
@@ -16,21 +17,19 @@ function generateDays() {
       timeBlock.append(hourDiv);
 
       var textarea = $("<textarea>")
-      addClass("col-8 col-md-10 description")
-      attr("aria-label", "save")
-      .html(<i class="fas fa=save" aria-hidden="true"></i>);
+      .addClass("col-8 col-md-10 description")
+      .attr("rows" , "3");
+      timeBlock.append(textarea);
 
-
+      var saveBtn = $("<button>")
+      .addClass("btn saveBtn col-2 col-md-1")
+      .attr("aria-label", "save")
+      .html('<i class="fas fa-save" aria-hidden="true"></i>');
+timeBlock.append(saveBtn);
     }
-  }
+  // }
 }
-
-
-
-
-
-
-
+generateDays()
 
 $(function () {
 // Displaying current date in header.
@@ -39,12 +38,12 @@ $("#currentDay").text(dayjs().format("MMMM D, YYYY"));
 var currentHour = dayjs().hour();
 $(".time-block").each(function() {
 var blockHour = parseInt($(this).attr("id").split("-")[1]);
-
+console.log(blockHour, currentHour)
  if (blockHour < currentHour) {
   $(this).addClass("past");
-} else if (blockHour === currentHour) {
-  $(this).addClass("past");
-  $(this).removeClass("present");
+} else if (blockHour == currentHour) {
+  $(this).addClass("present");
+  $(this).removeClass("past");
 } else {
 
 $(this).removeClass("past");
