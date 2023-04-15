@@ -18,7 +18,7 @@ $(this).removeClass("present");
 $(this).addClass("future");
 
 }
-})});
+});
 
 
 
@@ -36,7 +36,17 @@ if (savedText) {
 
 // adding a listener for click events on the save button. This code should
 
+$(".saveBtn").on("click" , function() {
 
+  var parent = $(this).parent();
+  var id = parent.attr("id");
+  var text = parent.find("textarea").val();
+
+  localStorage.setItem(id, text);
+
+});
+
+});
 
 
 
