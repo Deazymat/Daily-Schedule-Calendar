@@ -1,3 +1,5 @@
+/* Used open ai to helped by basic template and added and changed to what i needed */
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -7,8 +9,8 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: #0000;
+  border-left: 1px solid #0000;
   padding: 10px;
 }
 
@@ -26,8 +28,8 @@ textarea {
 
 .hour {
   background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  color: #0000;
+  border-top: 1px dashed #0000;
 }
 
 .past {
@@ -36,20 +38,20 @@ textarea {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #f87a74;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #8ca88c;
   color: white;
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  border-left: 1px solid #0000;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #236270;
   color: white;
 }
 

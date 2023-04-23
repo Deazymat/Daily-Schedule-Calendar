@@ -25,3 +25,10 @@ Project uses the following dependencies:
 This is for a employee that has a busy schedule. Can add important events to the daily planner. So that you can manage your time effectively.
 
 This project is licensed under the MIT LICENSE. 
+
+## Resources
+
+https://www.youtube.com/@academind
+https://www.w3schools.com
+https://stackoverflow.com
+https://chat.openai.com
